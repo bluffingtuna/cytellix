@@ -3,6 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const routes = require('./router');
+const port = process.env.PORT;
 
 //use sessions for tracking logins
 app.use(session({
@@ -36,6 +37,6 @@ app.use(function (err, req, res, next) {
 });
 
 // listen on port 3000
-app.listen(3000, function () {
+app.listen(port, function () {
   console.log('Express app listening on port 3000')
 })
